@@ -29,13 +29,13 @@ The direction of the greatest rate of increase of a function is called the gradi
 
 Now how do we find the direction for the greatest rate of increase?  We use partial derivatives.  Here's why.
 
-As we know, the partial derivative $\frac{df}{dx}$ calculates the change in output from moving a little bit in the $x$ direction, and the partial derivative $\frac{df}{dy}$ calculates the change in output from moving in the $y$ direction.  Because with gradient ascent our goal is to make a nudge in $x, y$ that produces the greatest change in output, if $\frac{df}{dy} > \frac{df}{dx}$, we should make that move more in the $y$ direction than the $x$ direction, and vice versa.  That is, we want to get the biggest bang for our buck.  
+As we know, the partial derivative $\frac{\partial f}{\partial x}$ calculates the change in output from moving a little bit in the $x$ direction, and the partial derivative $\frac{\partial f}{\partial y}$ calculates the change in output from moving in the $y$ direction.  Because with gradient ascent our goal is to make a nudge in $x, y$ that produces the greatest change in output, if $\frac{\partial f}{\partial y} > \frac{\partial f}{\partial x}$, we should make that move more in the $y$ direction than the $x$ direction, and vice versa.  That is, we want to get the biggest bang for our buck.  
 
 ![](./Denali.jpg)
 
 Let's relate this again to the picture of our mountain climbers. Imagine the vertical edge on the left is our y-axis and the horizontal edge is on the bottom is our x-axis.  For the climber in the yellow jacket, imagine his step size is three feet. A step straight along the y-axis will move him further upwards than a step along the x-axis.  So in taking that step he should direct himself more towards the y-axis than the x-axis.  That will produce a bigger increase per step size.
 
-In fact, the direction of greatest ascent for a function,  $\nabla f(x, y)$, is the direction which is a proportion of $\frac{df}{dy}$ steps in the $y$ direction and $\frac{df}{dx}$ in the $x$ direction.  So, for example, if $\frac{df}{dy}$ = 5 and $\frac{df}{dx}$ = 1, the direction of gradient ascent is five times more in the $y$ direction than the $x$ direction.  And this seems to be the path, more or less that our climbers are taking - some combination of $x$ and $y$, but tilted more towards the $y$ direction.
+In fact, the direction of greatest ascent for a function,  $\nabla f(x, y)$, is the direction which is a proportion of $\frac{\partial f}{\partial y}$ steps in the $y$ direction and $\frac{\partial f}{\partial x}$ in the $x$ direction.  So, for example, if $\frac{\partial f}{\partial y}$ = 5 and $\frac{\partial f}{\partial x}$ = 1, the direction of gradient ascent is five times more in the $y$ direction than the $x$ direction.  And this seems to be the path, more or less that our climbers are taking - some combination of $x$ and $y$, but tilted more towards the $y$ direction.
 
 ### Applying Gradient Descent 
 
@@ -49,7 +49,7 @@ Imagine being at the bottom left of the graph at the point $x = 1$, $y = 1$.  Wh
 
 The gradient of the function $f(x,y)$, that is $ \nabla f(x,y) = 2x + 3y $ is the following: 
 
-$\frac{df}{dx}(2x + 3y) = 2 $ and $\frac{df}{dy}(2x + 3y) = 3 $.
+$\frac{\partial f}{\partial x}(2x + 3y) = 2 $ and $\frac{\partial f}{\partial y}(2x + 3y) = 3 $.
 
 So what this tells us is to move in the direction of greatest ascent for the function $f(x,y) = 2x + 3y $, is to move up three and to the right two.  So we would expect our path of greatest ascent to look like the following.
 
@@ -63,6 +63,6 @@ So this path maps up well to what we see visually.  That is the idea behind grad
 
 In this lesson, we saw how we can use gradient descent to find the direction of steepest descent.  We saw that the direction of steepest descent is generally some combination of a change in our variables to produce the greatest negative rate of change.  
 
-We first how saw how to calculate the gradient **ascent**, or the gradient $\nabla $, by calculating the partial derivative of a function with respect to the variables of the function.  So $\nabla f(x, y) = \frac{\delta f}{\delta y}, \frac{\delta f}{\delta x} $.  This means that to take the path of greatest ascent, we should move $ \frac{\delta f}{\delta y} $ divided by $ \frac{\delta f}{\delta x} $.  So for example, when $ \frac{\delta f}{\delta y}f(x, y)  = 3 $ , and $ \frac{\delta f}{\delta x}f(x, y)  = 2$, we travelled in line with a slope of 3/2.
+We first how saw how to calculate the gradient **ascent**, or the gradient $\nabla $, by calculating the partial derivative of a function with respect to the variables of the function.  So $\nabla f(x, y) = \frac{\partial f}{\partial y}, \frac{\partial f}{\partial x} $.  This means that to take the path of greatest ascent, we should move $ \frac{\partial f}{\partial y} $ divided by $ \frac{\partial f}{\partial x} $.  So for example, when $ \frac{\partial f}{\partial y}f(x, y)  = 3 $ , and $ \frac{\partial f}{\partial x}f(x, y)  = 2$, we traveled in line with a slope of 3/2.
 
-For gradient descent, that is to find the direction of greatest decrease, we simply reverse the direction of our partial derivatives and move in $ - \frac{\delta f}{\delta y}, - \frac{\delta f}{\delta x}$. 
+For gradient descent, that is to find the direction of greatest decrease, we simply reverse the direction of our partial derivatives and move in $ - \frac{\partial f}{\partial y}, - \frac{\partial f}{\partial x}$. 
