@@ -3,7 +3,7 @@
 
 ### Introduction
 
-As you know, we entered our discussion of derivatives to determine size and direction of a step with which to move along a cost curve.  We first used a derivative in a single variable function to see how the output of our cost curve changed with respect to change a change in one of our regression line's variables.  Then we learned about partial derivatives to see how a *three dimensional cost curve* responded to a change in the regression line.  
+As you know, we entered our discussion of derivatives to determine the size and direction of a step with which to move along a cost curve. We first used a derivative in a single variable function to see how the output of our cost curve changed with respect to a change in one of our regression line's variables. Then we learned about partial derivatives to see how a *three dimensional cost curve* responded to a change in the regression line.  
 
 However, we have not yet explicitly showed how partial derivatives apply to gradient descent.
 
